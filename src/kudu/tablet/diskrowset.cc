@@ -128,7 +128,7 @@ Status DiskRowSetWriter::InitAdHocIndexWriter() {
   const string& tablet_id = rowset_metadata_->tablet_metadata()->tablet_id();
   RETURN_NOT_OK_PREPEND(fs->CreateNewBlock(CreateBlockOptions({ tablet_id }),
                                            &block),
-                        "Couldn't allocate a block for compoound index");
+                        "Couldn't allocate a block for compound index");
 
   rowset_metadata_->set_adhoc_index_block(block->id());
 
